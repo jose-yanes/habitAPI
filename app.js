@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 
 const connectDB = require('./db/connect');
+const authenticateUser = require('./middleware/authentication');
+
 //const authenticateUser
 
 //routers
@@ -14,7 +16,7 @@ app.use(express.json());
 
 //routes
 app.use('/api/v1/auth',authRouter);
-app.use('/api/v1/habits',habitRouter);
+app.use('/api/v1/habits',authenticateUser, habitRouter);
 
 
 const port = process.env.PORT || 3000;

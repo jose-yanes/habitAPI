@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const {setHabits} = require('../controllers/habit');
+const {setHabit} = require('../controllers/habit');
 
 
-router.get('/',setHabits);
+router.post('/setHabit',setHabit);
 
 module.exports = router;
