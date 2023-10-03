@@ -8,12 +8,18 @@ const HabitSchema = new mongoose.Schema({
         maxlength:50
     },
     days:{
+        //count of days doing the habit
         type:Number,
     },
     startDay:{
         type: Date, default: Date.now
     },
+    lastUpdate:{
+        //last time habit was updated to know if +1days or not
+        type: Date, default: Date.now
+    },
     streak:{
+        //consecutive days doing the habit
         type:Number
     },
     difficulty:{
