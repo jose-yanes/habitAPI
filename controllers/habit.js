@@ -9,7 +9,18 @@ const setHabit = async (req,res) =>{
 const updateCount = async (req,res) => {
     //receive habit name + true or false
     //change the lastUpdate value to "today"
-    
+    //if lastUpdate was yesterday, and today === true; streak++
+    const filter = {
+        createdBy: req.user.userId,
+        name: req.body.name
+    };
+
+    const update = {
+        $inc: {count:1}
+    }
+
+    const updatedHabit = await Habit.findOneAndUpdate(filter,update)
+    res.status(200).json({updatedHabit})
 }
 
 module.exports = {

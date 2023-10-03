@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+//check required values
+
 const HabitSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -11,6 +13,13 @@ const HabitSchema = new mongoose.Schema({
         //count of days doing the habit
         type:Number,
     },
+    count:{
+        type:Number,
+        default: 0
+    },
+    quantity:{
+        type:Number
+    },
     startDay:{
         type: Date, default: Date.now
     },
@@ -20,14 +29,16 @@ const HabitSchema = new mongoose.Schema({
     },
     streak:{
         //consecutive days doing the habit
-        type:Number
+        type:Number,
+        default: 0
     },
     difficulty:{
         type:String,
         enum:{
             values:['easy','medium','hard','super hard'],
             message: '{VALUE} is not supported'
-        }
+        },
+        default: 'medium'
     },
     createdBy:{
         type:String,
