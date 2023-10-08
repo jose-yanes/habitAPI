@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const {setHabit, updateCount } = require('../controllers/habit');
+const {setHabit, habitStatus } = require('../controllers/habit');
 
 
 router.post('/setHabit',setHabit);
-router.post('/updateCount',updateCount);
+router.post('/habitStatus',habitStatus);
 
 module.exports = router;
