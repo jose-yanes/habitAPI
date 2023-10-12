@@ -9,6 +9,10 @@ const HabitSchema = new mongoose.Schema({
         minlength:3,
         maxlength:50
     },
+    code:{
+        type:String,
+        maxlength:10
+    },
     createdBy:{
         type:String,
         required:[true,"Sorry, we're having some problems with your user, please log in again :)"]

@@ -1,0 +1,2 @@
+>> If possible to update multiple habits at once.
+>> Check if habit already created for date, if yes, update if not create
