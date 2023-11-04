@@ -81,7 +81,14 @@ const habitStatus = async (req,res) => {
 
 };
 
+const getHabit = async (req,res) => {
+    const habitTrue = await Habit.findOne({
+    })
+    res.status(200).json(habitTrue);
+}
+
 module.exports = {
     setHabit,
-    habitStatus
+    habitStatus,
+    getHabit
 }
