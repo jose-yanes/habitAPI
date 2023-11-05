@@ -82,13 +82,22 @@ const habitStatus = async (req,res) => {
 };
 
 const getHabit = async (req,res) => {
-    const habitTrue = await Habit.findOne({
-    })
+
+    const filters = {
+        date: new Date(req.query.startDate)
+    };
+
+    // const habitTrue = await Habit.find(filters);
+    const habitTrue = await Update.find(filters);
+
     res.status(200).json(habitTrue);
 }
+//{date:'2023-10-08T00:00:00.000+00:00'}
+//{name:"Estudiar 3 pomodoros"}
 
 module.exports = {
     setHabit,
     habitStatus,
     getHabit
 }
+

@@ -14,7 +14,9 @@ const habitRouter = require('./routes/habit');
 
 
 app.use(express.json());
-app.use(cors())
+app.use(cors({
+    origin:'http://localhost:5500'
+}))
 
 //routes
 app.use('/api/v1/auth',authRouter);
